@@ -52,7 +52,7 @@ $(document).ready(function () {
         submitHandler: function (form) {
             console.log(form);
         },
-        invalidHandler: function (event, validator) {
+        invalidHandler: function (evento, validator) {
             let camposErrados = validator.numberOfInvalids();
             if (camposErrados) {
                 alert('Existem campos inválidos');
@@ -61,10 +61,10 @@ $(document).ready(function () {
     });
 
     $('.lista-veiculos button').click(function () {
-        const destino = $('#contato')
+        const destino = $('#contato');
 
         $('html').animate({
             scrollTop: destino.offset().top
         }, 1000)
-    });
+    })
 })
