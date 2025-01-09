@@ -52,16 +52,20 @@ $(document).ready(function () {
         submitHandler: function (form) {
             console.log(form);
         },
-        invalidHandler: function (evento, validator) {
-            let camposErrados = validator.numberOfInvalids();
+        invalidHandler: function(evento, validador) {
+            let camposErrados = validador.numberOfInvalids();
             if (camposErrados) {
                 alert('Existem campos inválidos');
             }
         }
     });
 
-    $('.lista-veiculos button').click(function () {
+    $('.lista-veiculos button').click(function() {
         const destino = $('#contato');
+
+        const nomeVeiculo = $(this).parent().find('h3').text()
+
+        $('#veiculo-interesse').val(nomeVeiculo);
 
         $('html').animate({
             scrollTop: destino.offset().top
